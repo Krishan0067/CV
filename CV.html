@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krishan Kanhaiya Maurya | CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#0f2a63;
+  --paper-2:#143272;
+  --ink:#eef3ff;
+  --ink-soft:#b6c4ea;
+  --line:rgba(238,243,255,.22);
+  --mark:#ffd84a;
+  --mark-ink:#1b1500;
+  --card:rgba(255,255,255,.06);
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;line-height:1.6;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  overflow-x:hidden;
+}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.7}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--mark);z-index:50}
+.glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(255,216,74,.14),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
+
+/* nav */
+nav{position:sticky;top:10px;z-index:40;margin-top:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(10px);
+  border:1px solid var(--line);padding:8px 10px;border-radius:12px}
+nav .brand{font-family:var(--font-mono);font-size:13px;margin-right:auto;padding-left:6px;letter-spacing:.04em}
+nav a.lnk{font-family:var(--font-mono);font-size:12.5px;text-decoration:none;padding:6px 10px;border-radius:8px;color:var(--ink-soft)}
+nav a.lnk:hover,nav a.lnk.on{background:var(--card);color:var(--ink)}
+.btn{font-family:var(--font-mono);font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--line);
+  background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  transition:transform .2s,background .2s;min-width:0;overflow-wrap:anywhere}
+.btn:hover{transform:translateY(-2px);background:var(--paper-2)}
+.btn.primary{background:var(--mark);color:var(--mark-ink);border-color:var(--mark);font-weight:600}
+.btn.primary:hover{background:#ffe27a}
+.btn svg{width:16px;height:16px;flex:none}
+.btn.static{cursor:default}.btn.static:hover{transform:none;background:var(--card)}
+
+/* hero */
+header.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+header.hero>*{min-width:0}
+.eyebrow{font-family:var(--font-mono);font-size:13px;color:var(--ink-soft);letter-spacing:.14em;text-transform:uppercase}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.3rem,6.4vw,4.8rem);line-height:1;margin:14px 0 16px;letter-spacing:-.03em;text-wrap:balance}
+h1 .hl{background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);color:inherit;padding:0 .08em;
+  background-size:0% 100%;background-repeat:no-repeat;animation:hl 1s .5s forwards ease-out}
+@keyframes hl{to{background-size:100% 100%}}
+.role{font-family:var(--font-mono);font-size:clamp(1rem,2.4vw,1.35rem);min-height:1.8em}
+.caret{display:inline-block;width:.6ch;background:var(--mark);margin-left:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{max-width:58ch;color:var(--ink-soft);margin:18px 0 26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.portrait{position:relative;aspect-ratio:1;max-width:340px;width:100%;justify-self:center}
+.portrait .ring{position:absolute;inset:0;border:2px dashed var(--ink-soft);border-radius:50%;animation:spin 40s linear infinite}
+.portrait .ring.r2{inset:7%;border-style:solid;border-color:var(--line);animation-duration:26s;animation-direction:reverse}
+.portrait .core{position:absolute;inset:13%;border-radius:50%;background:var(--paper-2);border:3px solid var(--mark);overflow:hidden}
+.portrait .core img{position:absolute;left:50%;top:50%;width:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%)}
+.tag{position:absolute;font-family:var(--font-mono);font-size:11.5px;background:var(--paper);border:1px solid var(--line);padding:3px 8px;border-radius:6px;animation:float 6s ease-in-out infinite}
+.tag.t1{top:6%;right:-2%}.tag.t2{bottom:14%;left:-4%;animation-delay:-2s}.tag.t3{bottom:0;right:8%;animation-delay:-4s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* sections */
+section{padding-block:56px;border-top:1px solid var(--line);position:relative}
+.sheet-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.sheet-label::before{content:"";width:28px;height:2px;background:var(--mark)}
+h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,4.4vw,2.8rem);line-height:1.05;margin:0 0 28px;letter-spacing:-.02em;text-wrap:balance}
+h3{font-family:var(--font-display);font-weight:700;font-size:1.25rem;margin:0 0 4px}
+p{margin:0 0 12px}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:36px}
+.about>*{min-width:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{border:1px solid var(--line);background:var(--card);padding:16px;border-radius:12px}
+.stat b{display:block;font-family:var(--font-display);font-size:2.4rem;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft)}
+
+/* timeline */
+.timeline{position:relative;padding-left:28px;display:grid;gap:26px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline .fill{position:absolute;left:6px;top:6px;width:2px;height:0;background:var(--mark);transition:height .2s}
+.job{position:relative;border:1px solid var(--line);background:var(--card);padding:18px 20px;border-radius:12px;min-width:0}
+.job::before{content:"";position:absolute;left:-28px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--mark)}
+.job .when{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-soft)}
+.job .org{color:var(--ink-soft);margin-bottom:8px}
+.job ul{margin:0;padding-left:18px;color:var(--ink-soft)}
+.job li{margin-bottom:4px}
+.job li b{color:var(--ink);font-weight:600}
+.job .cert{margin-top:12px;font-family:var(--font-mono);font-size:12px;border:1px dashed var(--mark);border-radius:8px;padding:8px 10px;color:var(--ink)}
+
+/* education table */
+.tablewrap{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mark-ink);background:var(--mark);font-weight:600;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--card)}
+td.sr{font-family:var(--font-mono);color:var(--ink-soft);width:56px}
+td.course{font-weight:600}
+td.yr{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.pct{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-variant-numeric:tabular-nums;min-width:130px}
+.bar{flex:1;height:7px;background:var(--card);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--mark);border-radius:99px;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+.note{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);margin-top:12px}
+
+/* skills */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.skillcard{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0;
+  transition:transform .25s ease,border-color .25s,opacity .8s ease;will-change:transform}
+.skillcard:hover{border-color:var(--mark)}
+.skillcard h3{font-size:1.05rem}
+.skillcard .num{font-family:var(--font-mono);font-size:12px;color:var(--mark)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--font-mono);font-size:12.5px;border:1px solid var(--line);padding:3px 10px;border-radius:99px;color:var(--ink)}
+.js .skillcard .chip{opacity:0;transform:scale(.8);transition:opacity .4s ease var(--d,0s),transform .4s cubic-bezier(.2,.9,.3,1.4) var(--d,0s)}
+.js .skillcard.in .chip{opacity:1;transform:none}
+
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding-block:34px 60px;color:var(--ink-soft);font-family:var(--font-mono);font-size:12.5px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+/* reveal: visible by default */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:760px){
+  header.hero{grid-template-columns:1fr;padding-block:48px 36px}
+  .portrait{max-width:250px;order:-1}
+  .about{grid-template-columns:1fr}
+  nav a.lnk{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv,.js .skillcard .chip{opacity:1;transform:none}
+  h1 .hl{background-size:100% 100%}
+}
+
+/* PRINT: 1-Page Optimized Layout */
+@page{size:A4 portrait;margin:8mm 10mm}
+@media print{
+  :root{
+    --paper:#fff;--paper-2:#f4f6fa;--ink:#111827;--ink-soft:#4b5563;
+    --line:#d1d5db;--card:#fff;--mark:#eab308;
+  }
+  html,body{
+    background:#fff!important;background-image:none!important;color:#111827;
+    font-size:8pt!important;line-height:1.25!important;padding:0;margin:0;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  #bg,#progress,#glow,nav,.actions,.ring,.tag,.caret,footer,.sheet-label::before{display:none!important}
+  *{animation:none!important;transition:none!important;box-shadow:none!important}
+  .js .rv,.js .skillcard .chip{opacity:1!important;transform:none!important}
+  .bar i{width:var(--w)!important}
+  h1 .hl{background:none!important}
+  
+  header.hero{display:grid;grid-template-columns:1fr 22mm;gap:8px;padding-block:0 4px}
+  .portrait{max-width:22mm;order:2;aspect-ratio:1}
+  .portrait .core{inset:0;border:1px solid #111}
+  h1{font-size:14pt!important;margin:0 0 2px!important;line-height:1.1}
+  .eyebrow{font-size:7pt;margin-bottom:2px}
+  .role{font-size:8pt;min-height:auto;margin-bottom:2px}
+  .lede{font-size:7.5pt;margin:2px 0 0;max-width:100%}
+  
+  section{padding-block:3px!important;border-top:1px solid #e5e7eb!important}
+  .sheet-label{font-size:7pt;margin-bottom:1px;display:none}
+  h2{font-size:9.5pt!important;margin:0 0 3px!important;font-weight:700}
+  h3{font-size:8.5pt!important;margin:0 0 1px}
+  p{margin:0 0 3px}
+
+  .about{display:block;gap:0}
+  #about p{font-size:7.5pt;margin-bottom:2px}
+  .stats{display:none!important}
+
+  .timeline{padding-left:0;gap:4px;display:grid}
+  .timeline::before,.timeline .fill,.job::before{display:none}
+  .job{padding:3px 6px;border:1px solid #e5e7eb;border-radius:4px;background:#fafafa}
+  .job .when{font-size:7pt;float:right}
+  .job .org{font-size:7.5pt;margin-bottom:2px;font-weight:600}
+  .job ul{margin:0;padding-left:14px}
+  .job li{font-size:7pt;margin-bottom:1px;line-height:1.2}
+  .job .cert{display:none}
+
+  .tablewrap{border:1px solid #d1d5db;border-radius:4px;overflow:visible}
+  table{width:100%;min-width:0}
+  th,td{padding:2px 5px!important;font-size:7pt!important;border-bottom:1px solid #e5e7eb}
+  th{background:#f3f4f6!important;color:#111!important;font-weight:700}
+  .bar{display:none}
+  .pct{min-width:auto}
+  .note{display:none}
+
+  .grid{grid-template-columns:repeat(3, 1fr)!important;gap:4px}
+  .skillcard{padding:4px 6px;gap:2px;border-radius:4px;border:1px solid #e5e7eb}
+  .skillcard .num{display:none}
+  .chips{gap:3px}
+  .chip{font-size:6.5pt;padding:1px 4px;border:1px solid #d1d5db;border-radius:3px}
+
+  .contact{gap:6px;margin-top:2px}
+  .contact .btn{padding:2px 5px;font-size:7pt;border-radius:4px;border:1px solid #d1d5db;background:transparent}
+  .printonly{display:none!important}
+}
+.printonly{display:none}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<div class="wrap">
+  <nav aria-label="Sections">
+    <span class="brand" id="brand">CV</span>
+    <a class="lnk" href="#about">About</a>
+    <a class="lnk" href="#experience">Experience</a>
+    <a class="lnk" href="#education">Education</a>
+    <a class="lnk" href="#skills">Skills</a>
+    <a class="lnk" href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <div class="eyebrow rv" id="eyebrow"></div>
+      <h1 class="rv" id="name"></h1>
+      <div class="role rv"><span id="typed"></span><span class="caret">&nbsp;</span></div>
+      <p class="lede rv" id="lede"></p>
+      <div class="actions rv">
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="portrait rv">
+      <div class="ring" aria-hidden="true"></div><div class="ring r2" aria-hidden="true"></div>
+      <div class="core"><img alt="Portrait of Krishan Kanhaiya Maurya" src="passport.jpg"></div>
+      <span class="tag t1" id="tag1" aria-hidden="true"></span><span class="tag t2" id="tag2" aria-hidden="true"></span><span class="tag t3" id="tag3" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="sheet-label rv">Profile</div>
+    <h2 class="rv">Summary</h2>
+    <div class="about">
+      <div class="rv" id="aboutText"></div>
+      <div class="stats rv" id="stats"></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sheet-label rv">Work history</div>
+    <h2 class="rv">Work experience</h2>
+    <div class="timeline" id="timeline"><div class="fill" id="tfill"></div></div>
+  </section>
+
+  <section id="education">
+    <div class="sheet-label rv">Qualifications</div>
+    <h2 class="rv">Education &amp; certificates</h2>
+    <div class="tablewrap rv">
+      <table>
+        <thead><tr><th>Sr. No.</th><th>Course name</th><th>Board / University / Institute</th><th>Passing year</th><th>Percentage</th></tr></thead>
+        <tbody id="eduBody"></tbody>
+      </table>
+    </div>
+    <p class="note rv" id="eduNote"></p>
+  </section>
+
+  <section id="skills">
+    <div class="sheet-label rv">Toolkit</div>
+    <h2 class="rv">Skills</h2>
+    <div class="grid" id="skillGrid"></div>
+  </section>
+
+  <section id="contact">
+    <div class="sheet-label rv">Contact</div>
+    <h2 class="rv">Let’s connect</h2>
+    <div class="contact rv" id="contactList"></div>
+  </section>
+
+  <footer>
+    <span id="foot"></span>
+    <span class="hint">Tip: press Ctrl/Cmd + P any time to print.</span>
+  </footer>
+</div>
+
+<script>
+const CV = {
+  name: "KRISHAN KANHAIYA MARURYA",
+  highlight: "Maurya",
+  location: "Gorakhpur, Uttar Pradesh, India",
+  roles: ["COMPUTER TEACHER", "UX/UI Designer", "Software Development", "Computer Educator"],
+  tags: ["C++ · Java", "PYTHON", "Teaching"],
+  summary: "Highly motivated IT professional with a BCA background and hands-on experience in UX/UI Design and Software Development. Proven track record of working within software teams and delivering user-centric designs. Additionally, I have a strong foundation in Data Entry and Computer Education, having taught both basic and advanced courses to BCA students. I am looking to leverage my technical and teaching skills in a challenging software environment.",
+  about: [],
+  stats: [
+    { value: 3,   suffix: "+", label: "years as Computer Lab Instructor" },
+    { value: 100, suffix: "+", label: "computers managed" },
+    { value: 4,   suffix: "",  label: "professional roles" },
+    { value: 5,   suffix: "",  label: "qualifications" }
+  ],
+  experience: [
+    { role: "Computer Lab Instructor", org: "SKVP P.G. College, Maghar", when: "2023 – 2026",
+      points: [
+        ["Practical Training", "Conducted hands-on lab sessions for students, focusing on C, C++, Java, and Web Development."],
+        ["Technical Support", "Guided students in logic building, debugging code, and completing software projects."],
+        ["Lab Management", "Managed and maintained 100+ computer systems, ensuring all hardware and software were functional."],
+        ["System Administration", "Handled software installations, OS updates, and network troubleshooting (LAN/Wi-Fi)."],
+        ["Evaluation", "Conducted practical exams, maintained student lab records, and evaluated technical assignments."]
+      ],
+      cert: "Experience certificate from the college Principal: BCA Department, 01 Jan 2023 to 16 Feb 2026, a total of 3 years. Conduct and character found professional and satisfactory." },
+    { role: "Computer Teacher", org: "Computer education", when: "2023 – 2024",
+      points: [
+        ["", "Taught computer fundamentals, MS Office, C, C++, Python, HTML, CSS and basic programming."],
+        ["", "Photoshop, CorelDRAW, Figma."]
+      ] },
+    { role: "Toll Plaza (Site Engineer)", org: "Toll Plaza", when: "2021 – 2023",
+      points: [
+        ["", "Team supervision."],
+        ["", "Installation of IT components (computer software and hardware)."]
+      ] },
+    { role: "UX UI Designer", org: "UX/UI and graphic design", when: "2020 – 2021",
+      points: [
+        ["Client Management", "Discussed requirements with clients and provided customized design solutions within deadlines."],
+        ["Graphic Designing", "Created high-quality designs for brochures, banners, visiting cards, and flyers using design software."]
+      ] }
+  ],
+  education: [
+    { course: "High School",   board: "UP Board",      year: "2017", pct: 65 },
+    { course: "Intermediate",  board: "UP Board",      year: "2019", pct: 62 },
+    { course: "ADCFA",         board: "Institute",     year: "2019", pct: 80 },
+    { course: "ITI (Trade)",   board: "NCVT",          year: "2021", pct: 79 },
+    { course: "BCA",           board: "Siddharth University, Kapilvastu", year: "2026", pct: 65 }
+  ],
+  eduNote: "BCA at Santkabir Vidyapeeth Mahavidyalaya, Maghar (Siddharth University). Cumulative CGPA 7.545 after Semesters 1 and 2 (session 2024–25), result: Pass.",
+  skills: [
+    { group: "Programming Languages", items: ["C", "C++", "Java", "Python (Basics)"] },
+    { group: "Web Development",       items: ["HTML", "CSS", "JavaScript"] },
+    { group: "Operating Systems",     items: ["Windows", "Linux (Basics)"] },
+    { group: "Software & Tools",      items: ["MS Office (Word, Excel, PowerPoint)", "Tally Prime", "Git & GitHub", "VS Code", "Eclipse", "NetBeans"] },
+    { group: "Computer Fundamentals", items: ["Networking", "Computer Hardware", "Electronics"] },
+    { group: "UX / UI",               items: ["Adobe Photoshop", "CorelDRAW", "InDesign", "Canva", "Ai"] }
+  ],
+  contact: [
+    { label: "Email", text: "knhaiyakrishan12@gmail.com", href: "mailto:knhaiyakrishan12@gmail.com" },
+    { label: "Phone", text: "+91 9125746531", href: "tel:+919125746531" },
+    { label: "Location", text: "Gorakhpur, Uttar Pradesh, India" }
+  ]
+};
+
+document.documentElement.classList.add("js");
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+$("brand").textContent = "KRISHAN K. MAURYA / CV";
+$("eyebrow").textContent = CV.location;
+$("name").innerHTML = esc(CV.name).replace(esc(CV.highlight), '<span class="hl">' + esc(CV.highlight) + "</span>");
+$("lede").textContent = "Computer Lab Instructor with a BCA background, UX/UI design experience and 3 years of teaching and lab administration.";
+CV.tags.forEach((t, i) => $("tag" + (i + 1)).textContent = t);
+$("aboutText").innerHTML = "<p>" + esc(CV.summary) + "</p>";
+$("stats").innerHTML = CV.stats.map(s =>
+  `<div class="stat"><b data-to="${s.value}" data-suf="${esc(s.suffix)}">${s.value}${esc(s.suffix)}</b><span>${esc(s.label)}</span></div>`).join("");
+
+const tl = $("timeline");
+CV.experience.forEach(j => {
+  const d = document.createElement("article");
+  d.className = "job rv";
+  d.innerHTML = `<div class="when">${esc(j.when)}</div><h3>${esc(j.role)}</h3><div class="org">${esc(j.org)}</div>
+    <ul>${j.points.map(([l, t]) => "<li>" + (l ? "<b>" + esc(l) + ":</b> " : "") + esc(t) + "</li>").join("")}</ul>` +
+    (j.cert ? `<div class="cert">${esc(j.cert)}</div>` : "");
+  tl.appendChild(d);
+});
+
+$("eduBody").innerHTML = CV.education.map((e, i) =>
+  `<tr><td class="sr">${i + 1}</td><td class="course">${esc(e.course)}</td><td>${esc(e.board)}</td><td class="yr">${esc(e.year)}</td>
+   <td><div class="pct"><span>${e.pct}%</span><div class="bar" role="img" aria-label="${e.pct} percent"><i style="--w:${e.pct}%" data-w="${e.pct}"></i></div></div></td></tr>`).join("");
+$("eduNote").textContent = CV.eduNote;
+
+$("skillGrid").innerHTML = CV.skills.map((g, i) =>
+  `<article class="skillcard rv"><span class="num">SKL-${String(i + 1).padStart(2, "0")}</span><h3>${esc(g.group)}</h3>
+   <div class="chips">${g.items.map((s, k) => `<span class="chip" style="--d:${(0.15 + k * 0.07).toFixed(2)}s">${esc(s)}</span>`).join("")}</div></article>`).join("");
+
+$("contactList").innerHTML = CV.contact.map(c => c.href
+  ? `<a class="btn" href="${esc(c.href)}"><strong>${esc(c.label)}</strong> ${esc(c.text)}</a>`
+  : `<span class="btn static"><strong>${esc(c.label)}</strong> ${esc(c.text)}</span>`).join("");
+$("foot").textContent = "© " + new Date().getFullYear() + " " + CV.name;
+
+(function typer() {
+  const el = $("typed");
+  if (reduce) { el.textContent = CV.roles[0]; return; }
+  let r = 0, c = 0, del = false;
+  (function tick() {
+    const word = CV.roles[r];
+    el.textContent = word.slice(0, c);
+    if (!del && c === word.length) { del = true; return setTimeout(tick, 1400); }
+    if (del && c === 0) { del = false; r = (r + 1) % CV.roles.length; }
+    c += del ? -1 : 1;
+    setTimeout(tick, del ? 38 : 80);
+  })();
+})();
+
+function count(el) {
+  const to = +el.dataset.to, suf = el.dataset.suf;
+  if (reduce) { el.textContent = to + suf; return; }
+  const t0 = performance.now(), dur = 1400;
+  (function step(t) {
+    const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = Math.round(to * e) + suf;
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+}
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const t = e.target; t.classList.add("in");
+  t.querySelectorAll("[data-w]").forEach(b => b.style.width = b.dataset.w + "%");
+  t.querySelectorAll("[data-to]").forEach(count);
+  io.unobserve(t);
+}), { threshold: .15 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+setTimeout(() => document.querySelectorAll(".rv:not(.in)").forEach(el => {
+  if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in");
+}), 1200);
+
+const links = [...document.querySelectorAll("nav a.lnk")];
+const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+function onScroll() {
+  const h = document.documentElement;
+  $("progress").style.width = (h.scrollTop / (h.scrollHeight - innerHeight || 1) * 100) + "%";
+  const r = tl.getBoundingClientRect();
+  $("tfill").style.height = Math.max(0, Math.min(r.height, innerHeight * .6 - r.top)) + "px";
+  let cur = -1;
+  secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .4) cur = i; });
+  links.forEach((a, i) => a.classList.toggle("on", i === cur));
+}
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+if (!reduce) {
+  const glow = $("glow");
+  addEventListener("pointermove", e => { glow.style.left = e.clientX + "px"; glow.style.top = e.clientY + "px"; }, { passive: true });
+  document.querySelectorAll(".skillcard").forEach(c => {
+    c.addEventListener("pointermove", e => {
+      const b = c.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+      c.style.transform = `perspective(700px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-4px)`;
+    });
+    c.addEventListener("pointerleave", () => c.style.transform = "");
+  });
+}
+
+(function bg() {
+  const cv = $("bg"), ctx = cv.getContext("2d");
+  let w, h, pts = [], dpr = Math.min(devicePixelRatio || 1, 2);
+  function size() {
+    w = cv.width = innerWidth * dpr; h = cv.height = innerHeight * dpr;
+    const n = Math.round(Math.min(70, innerWidth / 18));
+    pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .35 * dpr, vy: (Math.random() - .5) * .35 * dpr }));
+  }
+  size(); addEventListener("resize", size);
+  function frame() {
+    ctx.clearRect(0, 0, w, h);
+    const col = getComputedStyle(document.documentElement).getPropertyValue("--ink-soft").trim() || "#b6c4ea";
+    ctx.fillStyle = col; ctx.strokeStyle = col;
+    pts.forEach(p => {
+      if (!reduce) { p.x += p.vx; p.y += p.vy; }
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.globalAlpha = .6; ctx.beginPath(); ctx.arc(p.x, p.y, 1.8 * dpr, 0, 7); ctx.fill();
+    });
+    const max = 130 * dpr;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.hypot(dx, dy);
+      if (d < max) { ctx.globalAlpha = (1 - d / max) * .35; ctx.lineWidth = dpr; ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); }
+    }
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* print hooks */
+function finalState() {
+  document.querySelectorAll(".rv").forEach(el => el.classList.add("in"));
+  document.querySelectorAll("[data-w]").forEach(b => b.style.width = b.dataset.w + "%");
+  document.querySelectorAll("[data-to]").forEach(b => b.textContent = b.dataset.to + b.dataset.suf);
+}
+addEventListener("beforeprint", finalState);
+</script>
+</body>
+</html>
